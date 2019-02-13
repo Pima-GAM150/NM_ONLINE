@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DirectionSlider : MonoBehaviour
 {
-
+    public int scrollSpeed;
     Slider directionSlider;
     bool hitRight = false;
     bool hitLeft = true;
@@ -27,21 +27,20 @@ public class DirectionSlider : MonoBehaviour
 
         if (hitLeft == true)
         {
-            directionSlider.value += Time.deltaTime;
+            directionSlider.value += (Time.deltaTime * scrollSpeed);
             if (directionSlider.value >= directionSlider.maxValue - 1)
             {
                 hitRight = true;
-                directionSlider.value -= Time.deltaTime;
+                hitLeft = false;
             }
         }
         if (hitRight == true)
-
         {
-            directionSlider.value -= Time.deltaTime;
+            directionSlider.value -= (Time.deltaTime * scrollSpeed);
             if (directionSlider.value <= directionSlider.minValue + 1)
             {
                 hitLeft = true;
-                directionSlider.value += Time.deltaTime;
+                hitRight = false;
             }
 
 

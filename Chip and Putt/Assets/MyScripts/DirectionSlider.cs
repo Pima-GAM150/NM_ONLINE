@@ -8,7 +8,7 @@ public class DirectionSlider : MonoBehaviour
     public int scrollSpeed;
     Slider directionSlider;
     bool hitRight = false;
-    bool hitLeft = true;
+    bool hitLeft = false;
 
 
     void Start()
@@ -19,12 +19,17 @@ public class DirectionSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ActivateDirectionSlider();
+        MoveSlider();
     }
 
     public void ActivateDirectionSlider()
     {
+        hitLeft = true;
+        
+    }
 
+    void MoveSlider()
+    {
         if (hitLeft == true)
         {
             directionSlider.value += (Time.deltaTime * scrollSpeed);

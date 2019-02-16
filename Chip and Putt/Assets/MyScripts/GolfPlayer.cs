@@ -28,7 +28,7 @@ public class GolfPlayer : MonoBehaviour
 
         rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 10) * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(clubs.clubSelection[0].transform.right * direction * Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 20) * Time.deltaTime, ForceMode.Acceleration);
+        rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 25) * Time.deltaTime, ForceMode.Acceleration);
     }
 
 }

@@ -24,9 +24,9 @@ public class GolfPlayer : MonoBehaviour
     public void HitBall(float power, float direction)
     {
 
-        rbody.AddForce(Vector3.forward * power * Time.deltaTime);
-        rbody.AddRelativeTorque(Vector3.up * direction * Time.deltaTime);
-
+        rbody.AddForce(Vector3.forward * (power * 10) * Time.deltaTime, ForceMode.Impulse);
+        rbody.AddForce(Vector3.right * direction * Time.deltaTime, ForceMode.Impulse);
+        rbody.AddForce(Vector3.forward * (power * 20) * Time.deltaTime, ForceMode.Acceleration);
     }
 
 }

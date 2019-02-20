@@ -4,7 +4,7 @@ using UnityEngine;
 
 using Photon.Pun;
 
-public class Player : MonoBehaviour, IPunInstantiateMagicCallback
+public class Player : MonoBehaviourPun, IPunInstantiateMagicCallback
 {
     public void OnPhotonInstantiate(PhotonMessageInfo info)
     {

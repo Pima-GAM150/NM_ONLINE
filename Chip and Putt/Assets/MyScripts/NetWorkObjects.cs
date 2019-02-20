@@ -6,7 +6,7 @@ using Photon.Pun;
 
 public class NetWorkObjects : MonoBehaviour
 {
-    public Transform[] startPositions;
+    public GolfCourse manager;
 
     // keep track of all the players in the game
     [HideInInspector] public List<PhotonView> players = new List<PhotonView>();
@@ -23,7 +23,7 @@ public class NetWorkObjects : MonoBehaviour
 
     void Start()
     {
-        Vector3 spawnPos = startPositions[Random.Range(0, startPositions.Length)].position;
+        Vector3 spawnPos = manager.startingSpots[Random.Range(0, manager.startingSpots.Length)].position;
         PhotonNetwork.Instantiate("Player", spawnPos, Quaternion.identity, 0);
     }
 

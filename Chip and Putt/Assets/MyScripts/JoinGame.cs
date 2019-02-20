@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using Photon.Realtime;
 using Photon.Pun;
 
-public class JoinGame : MonoBehaviour
+public class JoinGame : MonoBehaviourPunCallbacks
 {
 const int gameSceneIndex = 1;
 

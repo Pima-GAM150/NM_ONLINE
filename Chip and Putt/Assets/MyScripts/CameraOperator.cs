@@ -5,9 +5,14 @@ using UnityEngine;
 public class CameraOperator : MonoBehaviour
 {
 
+    //all player controls are in here
+
     public float moveSpeed;
     public float rotateSpeed;
     public GolfPlayer theBall;
+
+
+
 
     void Start()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GolfPlayer : MonoBehaviour
 {
-
+    GolfCourse teeList;
     Rigidbody rbody;
     GameObject UI;
     GolfClubs clubs;
@@ -12,6 +12,7 @@ public class GolfPlayer : MonoBehaviour
 
     void Awake()
     {
+        teeList = FindObjectOfType<GolfCourse>();
         clubs = FindObjectOfType<GolfClubs>();
         rbody = GetComponent<Rigidbody>();
         UI = FindObjectOfType<UIManager>().gameObject;
@@ -40,9 +41,14 @@ public class GolfPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        int nextHole = Random.Range(0, teeList.startingSpots.Length);
+
+
+
         if (other.CompareTag("Cup"))
-        {//pick another random start and put everything over there
-               
+        {
+            Debug.Log("In hole");
+            transform.position = teeList.startingSpots[nextHole].transform.position;
         }
     }
 

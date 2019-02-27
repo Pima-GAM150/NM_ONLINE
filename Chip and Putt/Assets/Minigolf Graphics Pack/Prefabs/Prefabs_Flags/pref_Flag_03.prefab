@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3357820}
   - component: {fileID: 2326612}
   - component: {fileID: 6492610}
+  - component: {fileID: 4389523736389059790}
   m_Layer: 0
   m_Name: pref_Flag_03
-  m_TagString: Untagged
+  m_TagString: Cup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,3 +93,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 6b4d3da1f7e3bc44183d1e27350615bc, type: 3}
+--- !u!65 &4389523736389059790
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19543457, y: 0.060390294, z: 0.24975777}
+  m_Center: {x: -0.069381714, y: -0.06480488, z: -0.05403614}

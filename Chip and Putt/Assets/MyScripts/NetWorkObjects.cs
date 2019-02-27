@@ -7,6 +7,8 @@ using Photon.Pun;
 public class NetWorkObjects : MonoBehaviour
 {
     public GolfCourse manager;
+    Transform spawnLocation;
+    int startingTee;
 
     // keep track of all the players in the game
     [HideInInspector] public List<PhotonView> players = new List<PhotonView>();
@@ -19,8 +21,11 @@ public class NetWorkObjects : MonoBehaviour
     void Awake()
     {
         find = this;
-    
-        Transform spawnLocation = manager.startingSpots[Random.Range(0, manager.startingSpots.Length)];
+
+        startingTee = Random.Range(0, manager.startingSpots.Length);
+
+
+        spawnLocation = manager.startingSpots[startingTee];
         Vector3 spawnPos = spawnLocation.position;
         Quaternion spawnRot = spawnLocation.rotation;
         PhotonNetwork.Instantiate("Player", spawnPos, spawnRot, 0);
@@ -32,10 +37,14 @@ public class NetWorkObjects : MonoBehaviour
         players.Add(player);
 
         // only the "server" has authority over which color the player should be and its seed
-        if (PhotonNetwork.IsMasterClient)
-        {
-            player.RPC("SetColor", RpcTarget.AllBuffered, players.Count - 1); // buffer the color change so it applies to new arrivals in the room
-            player.RPC("SetRandomSeed", RpcTarget.AllBuffered, seed);
-        }
+        //if (PhotonNetwork.IsMasterClient)
+       // {
+
+            player.GetComponentInChildren<GolfPlayer>().currentHole = startingTee;
+
+
+           // player.RPC("SetColor", RpcTarget.AllBuffered, players.Count - 1); // buffer the color change so it applies to new arrivals in the room
+           // player.RPC("SetRandomSeed", RpcTarget.AllBuffered, seed);
+        //}
     }
 }

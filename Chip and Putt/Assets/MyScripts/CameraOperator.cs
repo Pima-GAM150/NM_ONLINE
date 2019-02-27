@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class CameraOperator : MonoBehaviour
+public class CameraOperator : MonoBehaviourPun, IPunObservable
 {
 
     //all player controls are in here
@@ -27,28 +28,34 @@ public class CameraOperator : MonoBehaviour
 
     public void MoveCamera()
     {
-        float horiz = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
-        float vert = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-        float rotate = Input.GetAxis("Rotate") * Time.deltaTime * rotateSpeed;
-        float elevation = Input.GetAxis("Elevation") * Time.deltaTime * moveSpeed;
+       // if (photonView.IsMine)
+       // {
+            float horiz = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+            float vert = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
+            float rotate = Input.GetAxis("Rotate") * Time.deltaTime * rotateSpeed;
+            float elevation = Input.GetAxis("Elevation") * Time.deltaTime * moveSpeed;
 
-        transform.Translate(horiz,elevation,vert);
-        transform.Rotate(0, rotate, 0, 0);
+            transform.Translate(horiz, elevation, vert);
+            transform.Rotate(0, rotate, 0, 0);
 
+        //}
         if (Input.GetKeyDown(KeyCode.R))
         {
-            transform.position = new Vector3(theBall.gameObject.transform.position.x, theBall.gameObject.transform.position.y, theBall.gameObject.transform.position.z-1.23f);
+            transform.position = new Vector3(theBall.gameObject.transform.position.x, theBall.gameObject.transform.position.y, theBall.gameObject.transform.position.z);
            
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-
+            theBall.gameObject.transform.position = theBall.teeList.startingSpots[theBall.currentHole].transform.position;
 
         }
 
 
     }
 
-
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new System.NotImplementedException();
+    }
 }

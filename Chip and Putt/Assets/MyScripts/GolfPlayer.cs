@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class GolfPlayer : MonoBehaviour
 {
-    GolfCourse teeList;
+   
     Rigidbody rbody;
     GameObject UI;
     GolfClubs clubs;
 
+
+    public int currentHole =0;
+    public GolfCourse teeList;
 
     void Awake()
     {
@@ -49,6 +52,7 @@ public class GolfPlayer : MonoBehaviour
         {
             Debug.Log("In hole");
             transform.position = teeList.startingSpots[nextHole].transform.position;
+            currentHole = nextHole;
         }
     }
 

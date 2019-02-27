@@ -231,6 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1388128986756026898}
   - component: {fileID: 5444216916659200053}
+  - component: {fileID: 2280805888970966750}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -276,6 +277,30 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &2280805888970966750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388128986756026899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3582e6719114aa19b8eccb4a9965e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSelection:
+  - {fileID: 4300000, guid: 4c5b35ce00635e44d968e841e0339b44, type: 3}
+  - {fileID: 4300000, guid: 61c00ea2d2f75664c98fc8831ffd2d56, type: 3}
+  - {fileID: 4300000, guid: dedfc93b070773748abe839bfceac911, type: 3}
+  - {fileID: 4300000, guid: 0aef690bea3d6f142bc6b34c2773cb53, type: 3}
+  - {fileID: 4300000, guid: c4ff927b1ecdeef4d83468c95bf592ac, type: 3}
+  - {fileID: 4300000, guid: f70cf24be30c3634182c5688945bd8e9, type: 3}
+  - {fileID: 4300000, guid: 0ab963d2050b56e4d9fe950090b4ba6f, type: 3}
+  - {fileID: 4300000, guid: 66e656d1dbf47d248a802dffaa9cb3cb, type: 3}
+  - {fileID: 4300000, guid: 8f3d3a9d97b4a7b4fb450685de52a851, type: 3}
+  - {fileID: 4300000, guid: 935de9cd39afe9248832ff788ce87089, type: 3}
+  currentball: {fileID: 1388128985840903823}
 --- !u!1 &1388128986782516704
 GameObject:
   m_ObjectHideFlags: 0

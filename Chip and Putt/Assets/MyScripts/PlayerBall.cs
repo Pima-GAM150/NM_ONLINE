@@ -5,18 +5,14 @@ using UnityEngine;
 public class PlayerBall : MonoBehaviour
 {
 
-    public GameObject ballSelection;
+    public Mesh[] ballSelection;
     public GameObject currentball;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int randomBall;
 
-    // Update is called once per frame
-    void Update()
+    public void Awake()
     {
-        
+        randomBall = Random.Range(0, ballSelection.Length);
+        currentball.GetComponent<MeshFilter>().mesh = ballSelection[randomBall];
     }
 }

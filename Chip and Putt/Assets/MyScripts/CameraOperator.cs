@@ -48,7 +48,6 @@ public class CameraOperator : MonoBehaviourPun, IPunObservable
         if (Input.GetKeyDown(KeyCode.T))
         {
             theBall.gameObject.transform.position = theBall.teeList.startingSpots[theBall.currentHole].transform.position;
-
         }
 
 

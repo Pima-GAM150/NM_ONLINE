@@ -22,10 +22,17 @@ public class HitButton : MonoBehaviour
        
     }
 
-    public void OnButtonHitIsClicked()
+    public void OnPuttButtonClick()
     {
         Debug.Log("Swing at ball with " + powerStrength.value + " & " + direction.value);
-        playerBall.HitBall(powerStrength.value, direction.value);
+        playerBall.PuttBall(powerStrength.value, direction.value);
     }
+
+    public void OnChipButtonClick()
+    {
+        Debug.Log("Swing at ball with " + powerStrength.value + " & " + direction.value);
+        playerBall.ChipBall(powerStrength.value, direction.value);
+    }
+
 
 }

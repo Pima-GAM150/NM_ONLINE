@@ -10,7 +10,7 @@ public class GolfPlayer : MonoBehaviour
     GolfClubs clubs;
 
 
-    void Start()
+    void Awake()
     {
         clubs = FindObjectOfType<GolfClubs>();
         rbody = GetComponent<Rigidbody>();
@@ -23,12 +23,19 @@ public class GolfPlayer : MonoBehaviour
         
     }
 
-    public void HitBall(float power, float direction)
+    public void PuttBall(float power, float direction)
     {
 
         rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 10) * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(clubs.clubSelection[0].transform.right * direction * Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 25) * Time.deltaTime, ForceMode.Force);
+        rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 30) * Time.deltaTime, ForceMode.Force);
+    }
+
+    public void ChipBall(float power, float direction)
+    {
+        rbody.AddForce(clubs.clubSelection[1].transform.forward * (power * 10) * Time.deltaTime, ForceMode.Impulse);
+        rbody.AddForce(clubs.clubSelection[1].transform.right * direction * Time.deltaTime, ForceMode.Impulse);
+        rbody.AddForce(clubs.clubSelection[1].transform.forward * (power * 25) * Time.deltaTime, ForceMode.Force);
     }
 
 }

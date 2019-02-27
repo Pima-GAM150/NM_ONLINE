@@ -19,12 +19,11 @@ public class NetWorkObjects : MonoBehaviour
     void Awake()
     {
         find = this;
-    }
-
-    void Start()
-    {
-        Vector3 spawnPos = manager.startingSpots[Random.Range(0, manager.startingSpots.Length)].position;
-        PhotonNetwork.Instantiate("Player", spawnPos, Quaternion.identity, 0);
+    
+        Transform spawnLocation = manager.startingSpots[Random.Range(0, manager.startingSpots.Length)];
+        Vector3 spawnPos = spawnLocation.position;
+        Quaternion spawnRot = spawnLocation.rotation;
+        PhotonNetwork.Instantiate("Player", spawnPos, spawnRot, 0);
     }
 
     public void AddPlayer(PhotonView player)

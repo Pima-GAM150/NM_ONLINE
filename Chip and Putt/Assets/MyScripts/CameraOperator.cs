@@ -7,6 +7,7 @@ public class CameraOperator : MonoBehaviour
 
     public float moveSpeed;
     public float rotateSpeed;
+    public GolfPlayer theBall;
 
     void Start()
     {
@@ -28,6 +29,21 @@ public class CameraOperator : MonoBehaviour
 
         transform.Translate(horiz,elevation,vert);
         transform.Rotate(0, rotate, 0, 0);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = new Vector3(theBall.gameObject.transform.position.x, theBall.gameObject.transform.position.y, theBall.gameObject.transform.position.z-1.23f);
+           
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+
+
+        }
+
+
     }
+
 
 }

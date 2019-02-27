@@ -38,4 +38,12 @@ public class GolfPlayer : MonoBehaviour
         rbody.AddForce(clubs.clubSelection[1].transform.forward * (power * 25) * Time.deltaTime, ForceMode.Force);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Cup"))
+        {//pick another random start and put everything over there
+               
+        }
+    }
+
 }

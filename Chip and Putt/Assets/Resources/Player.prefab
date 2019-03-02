@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 21}
   - component: {fileID: 37}
+  - component: {fileID: 6489622561917611027}
+  - component: {fileID: 4293232908627866054}
   m_Layer: 0
   m_Name: CameraOperator
   m_TagString: Untagged
@@ -48,6 +50,43 @@ MonoBehaviour:
   moveSpeed: 1
   rotateSpeed: 30
   theBall: {fileID: 39}
+--- !u!114 &6489622561917611027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 4293232908627866054}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &4293232908627866054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &16
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +241,7 @@ GameObject:
   - component: {fileID: 25}
   - component: {fileID: 41}
   - component: {fileID: 40}
+  - component: {fileID: 8389291546787485288}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -240,10 +280,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 0
+  Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 8389291546787485288}
+  - {fileID: 8389291546787485288}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -271,6 +312,21 @@ MonoBehaviour:
   - {fileID: 4300000, guid: 8f3d3a9d97b4a7b4fb450685de52a851, type: 3}
   - {fileID: 4300000, guid: 935de9cd39afe9248832ff788ce87089, type: 3}
   currentball: {fileID: 1388128985840903823}
+--- !u!114 &8389291546787485288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &19
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +435,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHole: 0
   teeList: {fileID: 0}
+--- !u!114 &839156026882206451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388128985840903823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1254759041080561248}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1254759041080561248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388128985840903823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1001 &1388128985841031987
 PrefabInstance:
   m_ObjectHideFlags: 0

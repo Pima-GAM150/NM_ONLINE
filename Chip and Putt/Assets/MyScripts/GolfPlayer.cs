@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using System;
 
-public class GolfPlayer : MonoBehaviour
+public class GolfPlayer : MonoBehaviourPun, IPunObservable
 {
    
     Rigidbody rbody;
@@ -29,10 +31,12 @@ public class GolfPlayer : MonoBehaviour
 
     public void PuttBall(float power, float direction)
     {
-
-        rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 10) * Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(clubs.clubSelection[0].transform.right * direction * Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 30) * Time.deltaTime, ForceMode.Force);
+        if (photonView.IsMine)
+        {
+            rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 10) * Time.deltaTime, ForceMode.Impulse);
+            rbody.AddForce(clubs.clubSelection[0].transform.right * direction * Time.deltaTime, ForceMode.Impulse);
+            rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 30) * Time.deltaTime, ForceMode.Force);
+        }
     }
 
     public void ChipBall(float power, float direction)
@@ -44,7 +48,7 @@ public class GolfPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        int nextHole = Random.Range(0, teeList.startingSpots.Length);
+        int nextHole = UnityEngine.Random.Range(0, teeList.startingSpots.Length);
 
 
 
@@ -56,4 +60,8 @@ public class GolfPlayer : MonoBehaviour
         }
     }
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -50,7 +50,7 @@ public class PowerAndDirectionSliders : MonoBehaviour
             if (hitBottom)
             {
                 sliderMeter.value += (Time.deltaTime * scrollSpeed);
-                if (sliderMeter.value >= sliderMeter.maxValue - 1)
+                if (sliderMeter.value >= sliderMeter.maxValue)
                 {
                     hitTop = true;
                     hitBottom = false;
@@ -59,7 +59,7 @@ public class PowerAndDirectionSliders : MonoBehaviour
             if (hitTop)
             {
                 sliderMeter.value -= (Time.deltaTime * scrollSpeed);
-                if (sliderMeter.value <= sliderMeter.minValue + 1)
+                if (sliderMeter.value <= sliderMeter.minValue)
                 {
                     hitBottom = true;
                     hitTop = false;

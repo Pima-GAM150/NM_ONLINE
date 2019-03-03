@@ -33,17 +33,17 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
     {
         if (photonView.IsMine)
         {
-            rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 10) * Time.deltaTime, ForceMode.Impulse);
-            rbody.AddForce(clubs.clubSelection[0].transform.right * direction * Time.deltaTime, ForceMode.Impulse);
-            rbody.AddForce(clubs.clubSelection[0].transform.forward * (power * 30) * Time.deltaTime, ForceMode.Force);
+            rbody.AddForce(clubs.clubSelection[0].transform.forward * (power), ForceMode.Impulse);
+            rbody.AddForce(clubs.clubSelection[0].transform.right * direction, ForceMode.Impulse);
+            rbody.AddForce(clubs.clubSelection[0].transform.forward * (power), ForceMode.Force);
         }
     }
 
     public void ChipBall(float power, float direction)
     {
-        rbody.AddForce(clubs.clubSelection[1].transform.forward * (power * 10) * Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(clubs.clubSelection[1].transform.right * direction * Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(clubs.clubSelection[1].transform.forward * (power * 25) * Time.deltaTime, ForceMode.Force);
+        rbody.AddForce(clubs.clubSelection[1].transform.forward * (power), ForceMode.Impulse);
+        rbody.AddForce(clubs.clubSelection[1].transform.right * direction, ForceMode.Impulse);
+        rbody.AddForce(clubs.clubSelection[1].transform.forward * (power), ForceMode.Force);
     }
 
     private void OnTriggerEnter(Collider other)

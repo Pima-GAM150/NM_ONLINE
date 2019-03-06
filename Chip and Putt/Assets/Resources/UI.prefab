@@ -1283,7 +1283,7 @@ MonoBehaviour:
   chipButton: {fileID: 103350260229648644}
   puttButton: {fileID: 103350261869961823}
   playersHole: {fileID: 1386559041917940225}
-  strokeCount: {fileID: 103350261160457759}
+  strokeDisplay: {fileID: 103350261160457759}
 --- !u!1 &103350261071078481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,7 +1370,7 @@ GameObject:
   - component: {fileID: 103350261160457756}
   - component: {fileID: 103350261160457759}
   m_Layer: 0
-  m_Name: StrokeCount
+  m_Name: StrokeDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

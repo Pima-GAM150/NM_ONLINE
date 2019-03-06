@@ -13,7 +13,9 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
     public Camera playerCam;
 
     public int currentHole =0;
+
     public int strokes = 0;
+    public int totalStrokes = 0;
 
     public GolfCourse teeList;
 
@@ -28,8 +30,11 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
     // Update is called once per frame
     void Update()
     {
-        UI.HoleNumberUpdate(currentHole);
-        UI.StrokeNumberUpdate(strokes);
+        if (photonView.IsMine)
+        {
+            UI.HoleNumberUpdate(currentHole);
+            UI.StrokeNumberUpdate(strokes, totalStrokes);
+        }
     }
 
     public void PuttBall(float power, float direction)
@@ -40,6 +45,7 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
             rbody.AddForce(clubs.clubSelection[0].transform.right * direction, ForceMode.Impulse);
             rbody.AddForce(clubs.clubSelection[0].transform.forward * (power), ForceMode.Force);
             strokes++;
+            totalStrokes++;
         }
     }
 
@@ -49,7 +55,10 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
         rbody.AddForce(clubs.clubSelection[1].transform.right * direction, ForceMode.Impulse);
         rbody.AddForce(clubs.clubSelection[1].transform.forward * (power), ForceMode.Force);
         strokes++;
+        totalStrokes++;
     }
+
+
 
     [PunRPC]
     public void SetStartingHole( int startingHole)
@@ -71,6 +80,7 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
             Debug.Log("In hole");
             transform.position = teeList.startingSpots[nextHole].transform.position;
             currentHole = nextHole;
+            strokes = 0;
         }
     }
 

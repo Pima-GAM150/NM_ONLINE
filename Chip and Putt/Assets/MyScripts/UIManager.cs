@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public Button chipButton;
     public Button puttButton;
     public Text playersHole;
-    public Text strokeCount;
+    public Text strokeDisplay;
 
     void Start()
     {
@@ -41,10 +41,10 @@ public class UIManager : MonoBehaviour
         playersHole.text = "Hole " + holeNum.ToString();
     }
 
-    public void StrokeNumberUpdate(int numOfStrokes)
+    public void StrokeNumberUpdate(int strokeNum, int totalStrokes)
     {
 
-        strokeCount.text = numOfStrokes.ToString();
+        strokeDisplay.text = "Stroke " + strokeNum.ToString() + "\n Total Strokes " + totalStrokes.ToString();
 
 
     }

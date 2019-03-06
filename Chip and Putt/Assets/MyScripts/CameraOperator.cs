@@ -45,6 +45,7 @@ public class CameraOperator : MonoBehaviourPun, IPunObservable
             {
                 theBall.gameObject.transform.position = theBall.teeList.startingSpots[theBall.currentHole].transform.position;
                 theBall.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+                theBall.GetComponent<Rigidbody>().angularVelocity = new Vector3(0,0,0);
             }
 
        }

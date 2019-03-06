@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public Slider directionMeter;
     public Button chipButton;
     public Button puttButton;
+    public Text playersHole;
+    public Text strokeCount;
 
     void Start()
     {
@@ -28,5 +30,23 @@ public class UIManager : MonoBehaviour
             puttButton.gameObject.SetActive(false);
             chipButton.gameObject.SetActive(false);
         }
+
+
     }
+
+
+    public void HoleNumberUpdate(int holeNum)
+    {
+
+        playersHole.text = "Hole " + holeNum.ToString();
+    }
+
+    public void StrokeNumberUpdate(int numOfStrokes)
+    {
+
+        strokeCount.text = numOfStrokes.ToString();
+
+
+    }
+
 }

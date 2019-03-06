@@ -8,11 +8,13 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
 {
     
      Rigidbody rbody;
-    GameObject UI;
+    UIManager UI;
     GolfClubs clubs;
     public Camera playerCam;
 
     public int currentHole =0;
+    public int strokes = 0;
+
     public GolfCourse teeList;
 
     void Awake()
@@ -20,13 +22,14 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
         teeList = FindObjectOfType<GolfCourse>();
         clubs = FindObjectOfType<GolfClubs>();
         rbody = GetComponent<Rigidbody>();
-        UI = FindObjectOfType<UIManager>().gameObject;
+        UI = FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UI.HoleNumberUpdate(currentHole);
+        UI.StrokeNumberUpdate(strokes);
     }
 
     public void PuttBall(float power, float direction)
@@ -36,6 +39,7 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
             rbody.AddForce(clubs.clubSelection[0].transform.forward * (power), ForceMode.Impulse);
             rbody.AddForce(clubs.clubSelection[0].transform.right * direction, ForceMode.Impulse);
             rbody.AddForce(clubs.clubSelection[0].transform.forward * (power), ForceMode.Force);
+            strokes++;
         }
     }
 
@@ -44,6 +48,7 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
         rbody.AddForce(clubs.clubSelection[1].transform.forward * (power), ForceMode.Impulse);
         rbody.AddForce(clubs.clubSelection[1].transform.right * direction, ForceMode.Impulse);
         rbody.AddForce(clubs.clubSelection[1].transform.forward * (power), ForceMode.Force);
+        strokes++;
     }
 
     [PunRPC]

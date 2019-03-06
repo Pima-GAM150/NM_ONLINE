@@ -32,5 +32,8 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - SetColor
+  - CameraOp
+  - SetCameraActive
   DisableAutoOpenWizard: 1
   ShowSettings: 0

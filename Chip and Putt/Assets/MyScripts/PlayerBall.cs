@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System;
 
 public class PlayerBall : MonoBehaviour
 {
@@ -14,9 +15,23 @@ public class PlayerBall : MonoBehaviour
 
     public void Awake()
     {
-        randomBall = Random.Range(0, ballSelection.Length);
-        currentball.GetComponent<MeshFilter>().mesh = ballSelection[randomBall];
-        
+       
 
     }
+
+
+    [PunRPC]
+    public void SetColor()
+    {
+        randomBall = UnityEngine.Random.Range(0, ballSelection.Length);
+        currentball.GetComponent<MeshFilter>().mesh = ballSelection[randomBall];
+    }
+
+    [PunRPC]
+    public void SetCameraActive()
+    {
+        playerCam.gameObject.SetActive(true);
+    }
+
+    
 }

@@ -40,11 +40,17 @@ public class NetWorkObjects : MonoBehaviour
         //if (PhotonNetwork.IsMasterClient)
        // {
 
+         
+
+        if (PhotonNetwork.IsMasterClient)
+        {
             player.GetComponentInChildren<GolfPlayer>().currentHole = startingTee;
+            player.RPC("SetColor", RpcTarget.AllBuffered); // buffer the color change so it applies to new arrivals in the room
+            player.RPC("SetCameraActive", RpcTarget.);
+            
+        }
 
 
-           // player.RPC("SetColor", RpcTarget.AllBuffered, players.Count - 1); // buffer the color change so it applies to new arrivals in the room
-           // player.RPC("SetRandomSeed", RpcTarget.AllBuffered, seed);
-        //}
+
     }
 }

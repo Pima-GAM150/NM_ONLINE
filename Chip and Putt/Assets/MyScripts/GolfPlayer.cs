@@ -6,11 +6,11 @@ using System;
 
 public class GolfPlayer : MonoBehaviourPun, IPunObservable
 {
-   
-    Rigidbody rbody;
+    
+     Rigidbody rbody;
     GameObject UI;
     GolfClubs clubs;
-
+    public Camera playerCam;
 
     public int currentHole =0;
     public GolfCourse teeList;
@@ -62,6 +62,6 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        throw new NotImplementedException();
+        
     }
 }

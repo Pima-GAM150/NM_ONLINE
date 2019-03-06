@@ -35,5 +35,6 @@ MonoBehaviour:
   - SetColor
   - CameraOp
   - SetCameraActive
+  - SetStartingHole
   DisableAutoOpenWizard: 1
   ShowSettings: 0

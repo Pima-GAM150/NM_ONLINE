@@ -16,13 +16,6 @@ public class CameraOperator : MonoBehaviourPun, IPunObservable
 
     Transform target;
 
-
-    void Start()
-    {
-        if (!photonView.IsMine)
-            Camera.Destroy(Camera.current);
-    }
-
     // Update is called once per frame
     void Update()
     {

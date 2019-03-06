@@ -36,9 +36,7 @@ public class NetWorkObjects : MonoBehaviour
         // add a player to the list of all tracked players
         players.Add(player);
 
-        // only the "server" has authority over which color the player should be and its seed
-        //if (PhotonNetwork.IsMasterClient)
-       // {
+
 
          
 
@@ -46,7 +44,8 @@ public class NetWorkObjects : MonoBehaviour
         {
             player.GetComponentInChildren<GolfPlayer>().currentHole = startingTee;
             player.RPC("SetColor", RpcTarget.AllBuffered); // buffer the color change so it applies to new arrivals in the room
-            player.RPC("SetCameraActive", RpcTarget.);
+            player.RPC("SetStartingHole", RpcTarget.AllBuffered, startingTee);
+            //player.RPC("SetCameraActive", RpcTarget.AllBuffered);
             
         }
 

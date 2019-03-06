@@ -46,6 +46,15 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
         rbody.AddForce(clubs.clubSelection[1].transform.forward * (power), ForceMode.Force);
     }
 
+    [PunRPC]
+    public void SetStartingHole( int startingHole)
+    {
+        currentHole = startingHole;
+
+
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         int nextHole = UnityEngine.Random.Range(0, teeList.startingSpots.Length);

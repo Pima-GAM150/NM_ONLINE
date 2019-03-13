@@ -723,7 +723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Label
+  m_Text: Connecting Status
 --- !u!222 &1218038762
 CanvasRenderer:
   m_ObjectHideFlags: 0

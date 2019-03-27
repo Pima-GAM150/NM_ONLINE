@@ -1553,7 +1553,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 103350260729714167}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 15
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6160df0ba284a0c48a46a6e78f6368fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 30
+  scrollSpeed: 35
   clickCount: 0
 --- !u!1 &103350261550302792
 GameObject:

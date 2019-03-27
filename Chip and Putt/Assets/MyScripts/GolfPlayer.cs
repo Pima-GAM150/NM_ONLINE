@@ -79,6 +79,9 @@ public class GolfPlayer : MonoBehaviourPun, IPunObservable
         {
             Debug.Log("In hole");
             transform.position = teeList.startingSpots[nextHole].transform.position;
+            playerCam.GetComponentInParent<CameraOperator>().transform.position = transform.position;
+            rbody.velocity = new Vector3(0, 0, 0);
+            rbody.angularVelocity = new Vector3(0, 0, 0);
             currentHole = nextHole;
             strokes = 0;
         }

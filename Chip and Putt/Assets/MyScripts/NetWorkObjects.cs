@@ -22,7 +22,7 @@ public class NetWorkObjects : MonoBehaviour
     {
         find = this;
 
-        startingTee = Random.Range(0, manager.startingSpots.Length);
+        startingTee = Random.Range(0,3);
 
 
         spawnLocation = manager.startingSpots[startingTee];
